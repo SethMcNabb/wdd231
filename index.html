@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="WDD230 Course Home Page" />
+    <meta name="author" content="Seth McNabb" />
+    <title>Course Home Page - Seth McNabb</title>
+    <link rel="icon" href="favicon.ico" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <img src="images/profile.png" alt="Seth's Picture" />
+      <h1>Seth McNabb</h1>
+    </header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test File</title>
-</head>
+    <div class="hamburger" id="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
 
-<body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="chamber/index.html">Chamber</a></li>
+        <li><a href="https://github.com/SethMcNabb">Github Profile</a></li>
+        <li>
+          <a href="https://www.linkedin.com/in/seth-mcnabb-2586941bb/"
+            >Linkedin</a
+          >
+        </li>
+      </ul>
+    </nav>
 
-</body>
+    <main class="main-section">
+      <section class="course-work">
+        <h1>Course Work</h1>
+        <ul>
+          <li>Alpha</li>
+          <li>Bravo</li>
+          <li>Charlie</li>
+        </ul>
+      </section>
 
+      <section class="location">
+        <h1>St. George Utah, USA</h1>
+        <img src="images/stgeorge.jpg" alt="St George image" />
+        <p>Winter in St. George</p>
+      </section>
+
+      <section class="certificate">
+        <h1>Web and Computer Programming Certificate</h1>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; <span id="currentyear"></span> | Seth McNabb | USA</p>
+      <p id="lastModified">Last Updated:</p>
+    </footer>
+  </body>
 </html>
