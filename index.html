@@ -6,9 +6,21 @@
     <meta name="description" content="WDD230 Course Home Page" />
     <meta name="author" content="Seth McNabb" />
     <title>Course Home Page - Seth McNabb</title>
+    <meta property="og:title" content="Course Home Page - Seth McNabb" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://sethmcnabb.github.io/wdd231/images/stgeorge.jpg"
+    />
+    <meta property="og:url" content="https://sethmcnabb.github.io/wdd231/" />
+    <meta
+      property="og:description"
+      content="Seth McNabb's Course Home Page for WDD231"
+    />
+
     <link rel="icon" href="favicon.ico" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <script src="script.js" defer></script>
+    <script src="scripts/script.js" defer></script>
   </head>
   <body>
     <header>
@@ -53,12 +65,18 @@
 
       <section class="certificate">
         <h1>Web and Computer Programming Certificate</h1>
+        <div class="filter-buttons">
+          <button id="all-btn">All</button>
+          <button id="cse-btn">CSE</button>
+          <button id="wdd-btn">WDD</button>
+        </div>
+        <div id="courses-container" class="courses-grid"></div>
       </section>
     </main>
 
     <footer>
-      <p>&copy; <span id="currentyear"></span> | Seth McNabb | USA</p>
-      <p id="lastModified">Last Updated:</p>
+      <p id="current-year"></p>
+      <p id="last-modified"></p>
     </footer>
   </body>
 </html>

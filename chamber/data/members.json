@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Five Guys",
+        "address": "1234 E 700 S, St. George, UT 84790",
+        "phone": "435-627-0000",
+        "website": "http://www.fiveguys.com",
+        "image": "images/five-guys.jpeg",
+        "membershipLevel": 1
+    },
+    {
+        "name": "First Watch",
+        "address": "456 N 1000 E, St. George, UT 84770",
+        "phone": "435-673-0070",
+        "website": "http://www.firstwatch.com",
+        "image": "images/first-watch.webp",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Intermountain Health Care St George Hospital",
+        "address": "3000 S 400 E, St. George, UT 84790",
+        "phone": "435-251-1000",
+        "website": "http://intermountainhealthcare.org",
+        "image": "images/intermountain-healthcare.jpg",
+        "membershipLevel": 3
+    },
+    {
+        "name": "Harmons Grocery",
+        "address": "1000 S 1400 E, St. George, UT 84790",
+        "phone": "435-628-1111",
+        "website": "http://www.harmonsgrocery.com",
+        "image": "images/harmons.webp",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Domino's Pizza",
+        "address": "850 E 100 S, St. George, UT 84770",
+        "phone": "435-628-0000",
+        "website": "http://www.dominos.com",
+        "image": "images/dominos.webp",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Sonic Drive-In",
+        "address": "350 N 1400 E, St. George, UT 84770",
+        "phone": "435-627-9300",
+        "website": "http://www.sonicdrivein.com",
+        "image": "images/sonic.webp",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Chick-fil-A",
+        "address": "1720 S 2000 E, St. George, UT 84790",
+        "phone": "435-251-2100",
+        "website": "http://www.chick-fil-a.com",
+        "image": "images/chick-fil-a.jpg",
+        "membershipLevel": 3
+    }
+]
