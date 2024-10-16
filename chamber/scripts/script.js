@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const dateLastModified = new Date(document.lastModified).toDateString();
     lastModifiedElement.innerHTML = `Last modified: ${dateLastModified}`;
 
-    // No need to create membersContainer again
     const membersContainer = mainContent;
 
     async function fetchMembers() {
