@@ -1,5 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root {
+    --primary-color: #437C90; 
+    /*background-color: var(--primary-color);*/
+    --secondary-color: #2E4052; 
+    /*background-color: var(--secondary-color);*/
+    --accent-color: #2E4052; 
+    /*background-color: var(--accent-color);*/
+    --background-color: #FEFAE0;
+    /*background-color: var(--background-color);*/
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +19,7 @@
 }
 
 header {
-    background-color: #437C90;
+    background-color: var(--primary-color);
     text-align: center;
     display: flex;
     justify-content: center;
@@ -33,7 +44,7 @@ header h1 {
 }
 
 .screen-shader {
-    pointer-events: none;  /* Ensure this is correct */
+    pointer-events: none;  
 }
 
 .line {
@@ -44,8 +55,7 @@ header h1 {
 }
 
 nav {
-    background-color: #2E4052;
-    color: white;
+    background-color: var(--secondary-color);
     padding: 10px 0;
     width: 100%;
     display: none; 
@@ -76,7 +86,7 @@ nav a:hover {
 }
 
 footer {
-    background-color: #437C90;
+    background-color: var(--secondary-color);
     color: white;
     text-align: center;
     display: flex;
@@ -100,34 +110,35 @@ button {
 
 .members-container {
     justify-content: center; 
+    padding: 0 3rem;
 }
 
+
+
 .member-card {
-    padding: 10px;
-    margin: 10px;
-    text-align: center; 
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    display: flex;                
+    flex-direction: column;       
+    justify-content: center;    
+    align-items: center;         
+    text-align: center;           
     padding: 15px;
+    margin: 10px;
+    width: 100%;                  
     border: 1px solid #ccc;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
     background-color: #D0E4EF;
 }
 
+
 .member-card img {
     max-width: 30%; 
     height: auto; 
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .members-container.grid-view {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Corrected */
-    gap: 10px; 
-    padding: 10px;
+    grid-template-columns: 1fr 1fr; 
+    gap: 2rem; 
 }
 
 .members-container.list-view {
@@ -163,6 +174,20 @@ button {
 }
 
 @media (max-width: 1024px) {
+
+        .member-card {
+            padding: 10px;
+            margin: 5px;
+            width: 90%
+    }
+
+    p {
+        font-size: 10px;
+    }
+    
+    h2 {
+        font-size: 12px;
+    }
     .hamburger {
         display: flex; 
     }
@@ -196,7 +221,7 @@ button {
 
     .members-container.grid-view {
         display: grid;
-        grid-template-columns: 1fr; /* Corrected */
+        grid-template-columns: 1fr 1fr; 
         gap: 5px; 
         padding: 5px;
     }
