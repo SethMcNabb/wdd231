@@ -1,0 +1,10 @@
+{
+    "business": {
+        "name": "Five Guys",
+        "address": "1234 E 700 S, St. George, UT 84790",
+        "phone": "435-627-0000",
+        "website": "http://www.fiveguys.com",
+        "image": "images/five-guys.jpeg",
+        "membershipLevel": 1
+    }
+}
