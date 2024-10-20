@@ -1,22 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
     const mainContent = document.getElementById('main-content');
+    const featuredContent = document.getElementById('featured-content');
     const lastModifiedElement = document.getElementById('last-modified');
     const currentYear = new Date().getFullYear();
     document.getElementById("current-year").innerHTML = `&copy; ${currentYear} Seth McNabb | USA`;
     const dateLastModified = new Date(document.lastModified).toDateString();
     lastModifiedElement.innerHTML = `Last modified: ${dateLastModified}`;
 
-    const membersContainer = mainContent;
-
     async function fetchMembers() {
-        const response = await fetch('data/members.json');
-        const members = await response.json();
-        displayMembers(members);
+        try {
+            const response = await fetch('data/members.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const members = await response.json();
+            displayMembers(members);
+            displayFeaturedBusiness(members);
+        } catch (error) {
+            console.error('There was a problem with the fetch operation:', error);
+        }
     }
 
     function displayMembers(members) {
-        membersContainer.innerHTML = '';
-
+        mainContent.innerHTML = '';
         members.forEach(member => {
             const card = document.createElement('div');
             card.className = 'member-card';
@@ -27,8 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>${member.phone}</p>
                 <a href="${member.website}" target="_blank">Visit Website</a>
             `;
-            membersContainer.appendChild(card);
+            mainContent.appendChild(card);
         });
+    }
+
+    function displayFeaturedBusiness(members) {
+        const featured = members[0];
+        if (featured) {
+            featuredContent.innerHTML = '';
+            const card_2 = document.createElement('div');
+            card_2.className = 'featured-card';
+            card_2.innerHTML = `
+                <img src="${featured.image}" alt="${featured.name}" loading="lazy">
+                <h2>${featured.name}</h2>
+                <p>${featured.address}</p>
+                <p>${featured.phone}</p>
+                <a href="${featured.website}" target="_blank">Visit Website</a>
+            `;
+            featuredContent.appendChild(card_2);
+        } else {
+            featuredContent.innerHTML = '<p>No featured business available.</p>';
+        }
     }
 
     const hamburger = document.getElementById('hamburger');
@@ -40,37 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    document.getElementById('grid-view').addEventListener('click', () => {
-        membersContainer.className = 'members-container grid-view'; 
-    });
-
-    document.getElementById('list-view').addEventListener('click', () => {
-        membersContainer.className = 'members-container list-view';
-    });
-
     fetchMembers();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const featuredBusinessContainer = document.querySelector('.featured-business');
-
-    async function fetchFeaturedBusiness() {
-        const response = await fetch('data/featuredBusiness.json');
-        const featuredBusiness = await response.json();
-        displayFeaturedBusiness(featuredBusiness);
-    }
-
-    function displayFeaturedBusiness(business) {
-        featuredBusinessContainer.innerHTML = `
-            <img src="${business.image}" alt="${business.name}" loading="lazy">
-            <h2>${business.name}</h2>
-            <p>${business.address}</p>
-            <p>${business.phone}</p>
-            <a href="${business.website}" target="_blank">Visit Website</a>
-        `;
-    }
-
-    fetchFeaturedBusiness();
 });
 
 const currentTemp = document.querySelector('#current-temp');
@@ -84,7 +79,6 @@ async function apiFetch() {
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
-            console.log(data);
             displayResults(data);
         } else {
             throw Error(await response.text());
@@ -93,7 +87,6 @@ async function apiFetch() {
         console.log(error);
     }
 }
-
 
 function displayResults(data) {
     currentTemp.innerHTML = `${data.main.temp.toFixed(1)}&deg;F`;
