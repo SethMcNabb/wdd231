@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="St George Chamber of Commerce Home Page"
+    />
+    <meta name="author" content="Seth McNabb" />
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Chamber of Commerce Home Page | St. George, UT</title>
+    <meta property="og:title" content="Chamber Home" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://sethmcnabb.github.io/wdd231/chamber/images/temple_stock_image.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://sethmcnabb.github.io/wdd231/chamber/index.html"
+    />
+    <script src="scripts/script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>St George | Chamber of Commerce | Home</h1>
+      <div class="hamburger" id="hamburger" aria-label="Open navigation menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discovery.html">Discovery</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+
+    <main class="join-grid">
+      <form class="form" method="get" action="thankyou.html">
+        <h3>Member Sign-Up Form</h3>
+        <hr />
+        <label for="firstName">First Name*:</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          required
+          autocomplete="given-name"
+        />
+
+        <label for="lastName">Last Name*:</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          required
+          autocomplete="family-name"
+        />
+
+        <label for="positionTitle">Position Title:</label>
+        <input
+          type="text"
+          id="positionTitle"
+          name="positionTitle"
+          pattern="[A-Za-z\s\-]{7,}"
+        />
+
+        <label for="email">Email*:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          autocomplete="off"
+        />
+
+        <label for="cellNumber">Cell Phone*:</label>
+        <input type="tel" id="cellNumber" name="cellNumber" required />
+
+        <label for="businessName">Business Name*:</label>
+        <input type="text" id="businessName" name="businessName" required />
+
+        <h3>Select Membership Type</h3>
+        <hr />
+        <fieldset class="memberships">
+          <legend>Membership Options</legend>
+          <input
+            type="checkbox"
+            id="nonProfit"
+            name="membership"
+            value="Non Profit Membership"
+          />
+          <label for="nonProfit">Non Profit Membership</label>
+
+          <input
+            type="checkbox"
+            id="bronze"
+            name="membership"
+            value="Bronze Membership"
+          />
+          <label for="bronze">Bronze Membership</label>
+
+          <input
+            type="checkbox"
+            id="silver"
+            name="membership"
+            value="Silver Membership"
+          />
+          <label for="silver">Silver Membership</label>
+
+          <input
+            type="checkbox"
+            id="gold"
+            name="membership"
+            value="Gold Membership"
+          />
+          <label for="gold">Gold Membership</label>
+        </fieldset>
+
+        <label for="businessDescription">Business Description:</label>
+        <textarea
+          id="businessDescription"
+          name="businessDescription"
+          rows="4"
+          cols="40"
+        ></textarea>
+
+        <input type="hidden" id="timestamp" name="timestamp" />
+
+        <button type="submit" id="submit-form">Submit Form</button>
+      </form>
+
+      <div class="description-container">
+        <div class="card">
+          <h2>Non Profit Membership</h2>
+          <p>Get access to basic features.</p>
+          <a href="#np-modal" class="button">Learn More</a>
+        </div>
+        <div class="card">
+          <h2>Bronze Membership</h2>
+          <p>Access all features and benefits.</p>
+          <a href="#bronze-modal" class="button">Learn More</a>
+        </div>
+        <div class="card">
+          <h2>Silver Membership</h2>
+          <p>Exclusive offers and support.</p>
+          <a href="#silver-modal" class="button">Learn More</a>
+        </div>
+        <div class="card">
+          <h2>Gold Membership</h2>
+          <p>Benefits for the whole family.</p>
+          <a href="#gold-modal" class="button">Learn More</a>
+        </div>
+      </div>
+
+      <div id="basic-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" aria-label="Close modal">&times;</span>
+          <h2>Non Profit Membership Benefits</h2>
+          <p>As a Non Profit Member, you'll enjoy:</p>
+          <ul>
+            <li>No annual fees</li>
+            <li>Free access to all community activities</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="premium-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" aria-label="Close modal">&times;</span>
+          <h2>Bronze Membership Benefits</h2>
+          <p>As a Bronze Member, you'll enjoy:</p>
+          <ul>
+            <li>30% off all community event fees</li>
+            <li>Access to our network group</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="pro-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" aria-label="Close modal">&times;</span>
+          <h2>Silver Membership Benefits</h2>
+          <p>As a Silver Member, you'll enjoy:</p>
+          <ul>
+            <li>75% off all community event fees</li>
+            <li>Acess to our network group</li>
+            <li>Free access to 2 select community events</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="family-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" aria-label="Close modal">&times;</span>
+          <h2>Gold Membership Benefits</h2>
+          <p>As a Gold Member, you'll enjoy:</p>
+          <ul>
+            <li>Zero fees for all community events</li>
+            <li>No annual fees</li>
+            <li>Free access to all community activities</li>
+            <li>Access to family discounts on services</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p id="current-year"></p>
+      <p>Email: sethmcnabb00@gmail.com</p>
+      <p id="last-modified"></p>
+    </footer>
+  </body>
+</html>

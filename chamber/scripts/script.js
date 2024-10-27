@@ -98,3 +98,33 @@ function displayResults(data) {
 }
 
 apiFetch();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const timestampField = document.getElementById("timestamp");
+    if (timestampField) {
+      const currentTimestamp = new Date().toISOString();
+      timestampField.value = currentTimestamp;
+    }
+  });
+
+const modal = document.querySelectorAll('.modal');
+const button = document.querySelectorAll('.button');
+const close = document.querySelectorAll('.close');
+
+button.forEach((btn, index) => {
+    btn.onclick = () => {
+        modal[index].style.display = "block";
+    };
+});
+
+close.forEach((cl) => {
+    cl.onclick = () => {
+        modal.forEach(m => m.style.display = "none");
+    };
+});
+
+window.onclick = (event) => {
+    if (event.target.classList.contains('modal')) {
+        modal.forEach(m => m.style.display = "none");
+    }
+};
