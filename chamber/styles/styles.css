@@ -389,6 +389,16 @@ table {
     cursor: pointer;
 }
 
+.discovery-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+}
+
 /* Media Queries */
 @media (min-width: 1025px) { 
     .hamburger {
@@ -439,6 +449,15 @@ table {
     .featured-business {
         grid-column: 1/4;
         grid-row: 3/4;
+    }
+    .discovery-container {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .info-container {
+        display: flex;
+        flex-direction: column;
     }
 }
 

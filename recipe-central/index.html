@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Recipe Central" />
+    <meta name="author" content="Seth McNabb" />
+    <link rel="icon" href="images/bowl.png" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Recipe Central | Home</title>
+    <meta property="og:title" content="Dinner Central" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <meta
+      property="og:url"
+      content="https://sethmcnabb.github.io/wdd231/recipe-central/index.html"
+    />
+    <script src="scripts/script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>👨‍🍳 Recipe Central 🍽️</h1>
+      <div class="hamburger" id="hamburger" aria-label="Open navigation menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="find-new-recipies.html">Find New Recipes</a></li>
+        <li><a href="search-by-name.html">Search by Name</a></li>
+        <li><a href="search-by-ingredient.html">Search By Ingredient</a></li>
+        <li><a href="search-by-category.html">Search By Category</a></li>
+        <li><a href="save-for-later-form.html">"Save-For-Later" Form</a></li>
+        <li><a href="saved-recipes.html">Saved Recipies</a></li>
+      </ul>
+    </nav>
+
+    <main class="home">
+      <h1>Welcome to <strong>Dinner Central</strong>!</h1>
+      <p>
+        Don't know what to eat? Click <a href="find-new-recipies.html">here</a>
+        to find new meal ideas.
+      </p>
+      <p>
+        Want to search for your favorite recipes by name? Click
+        <a href="search-by-name.html">here</a>.
+      </p>
+      <p>
+        Have specific ingredients you want to cook with? Click
+        <a href="search-by-ingredient.html">here</a>.
+      </p>
+      <p>
+        Want to search by category? Click
+        <a href="search-by-ingredient.html">here</a>.
+      </p>
+      <p>
+        Want to save a recipe for later? Click <a href=""> here </a> to use our
+        "Save-For-Later" Form.
+      </p>
+      <p>Click <a href="">here</a> to view saved recipies.</p>
+
+      <div class="image-container">
+        <img
+          class="home-image"
+          src="images/stock_img_1.jpg"
+          alt="cooking in bowl"
+        />
+        <img
+          class="home-image"
+          src="images/stock_img_2.jpg"
+          alt="making stir fry"
+        />
+      </div>
+    </main>
+
+    <footer>
+      <p id="current-year"></p>
+      <p>Email: sethmcnabb00@gmail.com</p>
+      <p id="last-modified"></p>
+    </footer>
+  </body>
+</html>

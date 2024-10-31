@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Recipe Central" />
+    <meta name="author" content="Seth McNabb" />
+    <link rel="icon" href="images/bowl.png" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Recipe Central</title>
+    <meta property="og:title" content="Dinner Central" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="" />
+    <meta
+      property="og:url"
+      content="https://sethmcnabb.github.io/wdd231/recipe-central/index.html"
+    />
+    <script src="scripts/script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>👨‍🍳 Recipe Central 🍽️</h1>
+      <div class="hamburger" id="hamburger" aria-label="Open navigation menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="find-new-recipies.html">Find New Recipes</a></li>
+        <li><a href="search-by-name.html">Search by Name</a></li>
+        <li><a href="search-by-ingredient.html">Search By Ingredient</a></li>
+        <li><a href="search-by-category.html">Search By Category</a></li>
+        <li><a href="save-for-later-form.html">"Save-For-Later" Form</a></li>
+        <li><a href="saved-recipes.html">Saved Recipies</a></li>
+      </ul>
+    </nav>
+
+    <main class="search-by-category">
+      <label for="category-select">Choose a category:</label>
+      <select id="category-select" onchange="fetchMealsByCategory()">
+        <!-- Options will be populated by JavaScript -->
+      </select>
+      <div id="meal-results"></div>
+    </main>
+
+    <footer>
+      <p id="current-year"></p>
+      <p>Email: sethmcnabb00@gmail.com</p>
+      <p id="last-modified"></p>
+    </footer>
+  </body>
+</html>
