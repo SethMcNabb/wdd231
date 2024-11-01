@@ -128,3 +128,23 @@ window.onclick = (event) => {
         modal.forEach(m => m.style.display = "none");
     }
 };
+
+const lastVisitMessage = document.getElementById("last-visit-message");
+const lastVisitKey = "lastVisit";
+const now = Date.now();
+const lastVisit = localStorage.getItem(lastVisitKey);
+
+if (lastVisit) {
+    const daysSinceLastVisit = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+
+    if (daysSinceLastVisit === 0) {
+        lastVisitMessage.textContent = "Glad you're back!";
+    } else {
+        lastVisitMessage.textContent = `You last visited ${daysSinceLastVisit} day${daysSinceLastVisit > 1 ? "s" : ""} ago.`;
+    }
+} else {
+    lastVisitMessage.textContent = "Welcome! Let us know if you have any questions.";
+}
+
+localStorage.setItem(lastVisitKey, now);
+
