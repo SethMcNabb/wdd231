@@ -7,10 +7,13 @@
     <meta name="author" content="Seth McNabb" />
     <link rel="icon" href="images/bowl.png" />
     <link rel="stylesheet" href="styles/styles.css" />
-    <title>Recipe Central</title>
-    <meta property="og:title" content="Dinner Central" />
+    <title>Recipe Central | "Save for Later" Form</title>
+    <meta property="og:title" content="Recipe Central" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:image"
+      content="https://sethmcnabb.github.io/wdd231/recipe-central/images/stock_img_1.jpg"
+    />
     <meta
       property="og:url"
       content="https://sethmcnabb.github.io/wdd231/recipe-central/index.html"
@@ -40,7 +43,18 @@
       </ul>
     </nav>
 
-    <main class="save-for-later-form"></main>
+    <main class="save-for-later-form">
+      <h1>Save a Recipe for Later</h1>
+      <form id="recipeForm">
+        <label for="recipeName">Recipe Name:</label>
+        <input type="text" id="recipeName" required />
+
+        <label for="recipeDescription">Description:</label>
+        <textarea id="recipeDescription" required></textarea>
+
+        <button type="submit">Save Recipe</button>
+      </form>
+    </main>
 
     <footer>
       <p id="current-year"></p>

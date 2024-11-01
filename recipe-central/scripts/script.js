@@ -162,3 +162,44 @@ function displaySearchResults(meals) {
         mealResults.innerHTML = '<p>No meals found for that name.</p>';
     }
 }
+
+// Save for Later Form
+document.getElementById('recipeForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const recipeName = document.getElementById('recipeName').value;
+    const recipeDescription = document.getElementById('recipeDescription').value;
+
+    const recipe = {
+        name: recipeName,
+        description: recipeDescription
+    };
+
+    const recipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+    recipes.push(recipe);
+    localStorage.setItem('savedRecipes', JSON.stringify(recipes));
+
+    document.getElementById('recipeForm').reset();
+    alert('Recipe saved for later!');
+});
+
+// View Saved Recipes
+const savedRecipes = JSON.parse(localStorage.getItem('savedRecipes')) || [];
+const savedRecipesContainer = document.getElementById('savedRecipesContainer');
+
+console.log('Saved Recipes:', savedRecipes); 
+console.log('Container found:', savedRecipesContainer !== null);
+
+if (savedRecipes.length === 0) {
+    savedRecipesContainer.innerHTML = '<p>No saved recipes found.</p>';
+} else {
+    savedRecipes.forEach(recipe => {
+        const recipeCard = document.createElement('div');
+        recipeCard.classList.add('recipe-card');
+        recipeCard.innerHTML = `
+            <h3>${recipe.name}</h3>
+            <p>${recipe.description}</p>
+        `;
+        savedRecipesContainer.appendChild(recipeCard);
+    });
+}
